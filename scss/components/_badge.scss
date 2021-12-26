@@ -1,0 +1,16 @@
+.badge {
+  display: inline-block;
+  padding: .35rem .65rem;
+  font-weight: 700;
+  font-size: .7rem;
+  border-radius: 50rem;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  background-color: rgb(94, 97, 59);
+
+  &:not(:last-child) {
+    margin-right: .5rem;
+  }
+}

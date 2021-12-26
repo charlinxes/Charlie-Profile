@@ -1,0 +1,107 @@
+.footer {
+  background-color: #38393d;
+  padding:5rem 10rem;
+  font-size:1.8rem;
+  color:#b8b8b8;
+  @include respond(md) {
+    padding:5rem 6rem;
+  };
+  @include respond(sm) {
+    padding:4rem 5rem;
+  };
+  @include respond(xs) {
+    padding:3rem 4rem;
+  };
+
+  &__box {
+    width: 80%;
+    @include respond(md) {
+      width: 90%;
+    };
+    @include respond(sm) {
+      width: 100%;
+    };
+  }
+
+  &__heading {
+    color:white;
+    font-size:2.3rem;
+    font-weight: bold;
+    text-transform:uppercase;
+    letter-spacing:2px
+  }
+  &__about {
+    margin-bottom: 6rem;
+    line-height: 1.3;
+    @include respond(sm) {
+      margin-bottom: 4rem;
+    };
+    @include respond(xs) {
+      margin-bottom: 3rem;
+    };
+  }
+  &__navigation {
+    border-top: 3px solid rgb(207, 207, 207);
+    padding-top: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include respond(sm) {
+      flex-direction: column;
+    };
+  }
+  &__copyright {
+    line-height: 1.2;
+    @include respond(sm) {
+      margin-bottom: 1.3rem;
+    };
+  }
+  &__list {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__item {
+    padding:0 1rem;
+    @include respond(sm) {
+      padding:0 .6rem;
+    };
+  }
+  &__link {
+
+		&:link,
+		&:visited {
+			display:flex;
+      background-color: rgb(87, 86, 86);
+      width: 4.5rem;
+      height: 4.5rem;
+      border-radius: 100%;
+      justify-content: center;
+      align-items: center;
+		}
+
+    &:hover .footer__icon {
+      fill:white;
+    }
+
+    &--facebook:hover,
+    &--facebook:active {
+      background-color:#3b5998;
+    }
+
+    &--twitter:hover,
+    &--twitter:active {
+      background-color:#00aced;
+    }
+
+    &--github:hover,
+    &--github:active {
+      background-color:black;
+    }
+	}
+
+  &__icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    fill: #999999;
+  }
+}

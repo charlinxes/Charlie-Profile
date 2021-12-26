@@ -1,0 +1,38 @@
+.header {
+  height: 80vh;
+  background: {
+    image: linear-gradient(to right bottom,
+      rgba(#838254, 0.8),
+      rgba(#474726, 0.8)),
+      url('~assets/images/code_large.jpg');
+    position: center;
+    size: cover;
+    attachment: fixed;
+  }
+  clip-path: polygon(0 0, 100% 0, 100% 55vh, 0 80vh);
+  position: relative;
+  z-index: 1;
+  @include respond(md) {
+    height: 60vh;
+    clip-path: polygon(0 0, 100% 0, 100% 45vh, 0 60vh);
+  };
+  @include respond(sm) {
+    height: 55vh;
+    clip-path: polygon(0 0, 100% 0, 100% 45vh, 0 55vh);
+  };
+
+  &__content {
+    position:relative;
+    width:100%;
+    height:100%;
+  }
+
+  &__text-box{
+    position: absolute;
+    top: 35%;
+    left: 18%;
+    @include respond(sm) {
+      left: 12.5%;
+    };
+  }
+}

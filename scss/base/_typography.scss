@@ -1,0 +1,44 @@
+.heading {
+  &__primary {
+    color: rgb(247, 240, 230);
+    backface-visibility: hidden;
+
+    & > span {
+      display: block;
+      animation-fill-mode: backwards;
+    }
+    &--main {
+      font-size: 7rem;
+      font-weight: 400;
+      letter-spacing: 1.5rem;
+      margin-bottom: 2.5rem;
+      animation: moveInLeft 1s ease-out;
+      @include respond(xs) {
+        font-size: 6.5rem;
+      };
+    }
+    &--sub {
+      font-size: 5rem;
+      font-weight: 700;
+      letter-spacing: 1.1rem;
+      text-align: right;
+      margin-right: 3rem;
+      animation: moveInRight 1s ease-out 1s;
+      @include respond(xs) {
+        font-size: 4.5rem;
+      };
+    }
+  }
+
+  &__secondary {
+    font-size: 5rem;
+    font-weight: 400;
+    text-align: center;
+    margin:2rem 0;
+  }
+
+  &__tertiary {
+    font-size: 3rem;
+    font-weight: 400;
+  }
+}

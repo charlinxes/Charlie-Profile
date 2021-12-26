@@ -1,0 +1,206 @@
+.projectCard {
+  margin-top: -25vh;
+  padding-top: 25vh;
+  padding-bottom: 8rem;
+  background:{
+    image: linear-gradient(to right bottom, #c4bda0, #b4b48b),
+    url('~assets/images/project_large.jpg');
+    blend-mode: screen;
+    position: center;
+    size: cover;
+  }
+  @include respond(md) {
+    margin-top: -15vh;
+    padding-top: 15vh;
+    padding-bottom: 7rem;
+  };
+  @include respond(sm) {
+    margin-top: -10vh;
+    padding-top: 10vh;
+    padding-bottom: 6rem;
+  };
+
+  &__box {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    position: relative;
+  }
+
+  &__item {
+    perspective: 150rem;
+    height: 55rem;
+    width: 45rem;
+    position: relative;
+    margin: 0 4rem;
+    margin-bottom: 8rem;
+    @include respond(md) {
+      height: 66.5rem;
+    };
+
+
+    &:hover .projectCard__side--front {
+      transform: rotateY(-180deg);
+      @include respond(md) {
+        transform: rotateY(0);
+      };
+    }
+
+    &:hover .projectCard__side--back {
+      transform: rotateY(0);
+      @include respond(md) {
+        transform: rotateY(180deg);
+      };
+    }
+  }
+
+  &__side {
+    height: 55rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: all .8s ease;
+    backface-visibility: hidden;
+    box-shadow: 0 1.5rem 4rem rgba(black, .15);
+    @include respond(md) {
+      height: 66.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    };
+
+    &--front {
+      background-color: rgba(white, .85);
+    }
+
+    &--back {
+      transform: rotateY(180deg);
+
+      &-e-website {
+        background-image: linear-gradient(to right bottom, #62a152, #4e927c);
+      }
+
+      &-todolist {
+        background-image: linear-gradient(to right bottom, #91c0ce, #5d9cd6);
+      }
+    }
+  }
+
+  &__back {
+
+    &-content {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      padding: 7rem 0;
+      margin: 0 auto;
+    }
+    &-heading {
+      font-size: 2.8rem;
+      font-weight: 450;
+      color: white;
+    }
+  }
+
+  &__picture {
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    height: 23rem;
+    background-size: cover;
+    background-blend-mode: screen;
+
+    &--e-website {
+      background-image:
+        linear-gradient(to right bottom, #48773c, #326152),
+        url('~assets/images/projectt.jpg');
+    }
+
+    &--todolist {
+      background-image:
+        linear-gradient(to right bottom, #1f6bb3, #4234c7),
+        url('~assets/images/to-do-list.jpg');
+    }
+  }
+  &__heading {
+    font-size: 2.8rem;
+    font-weight: 450;
+    text-align: right;
+    color: white;
+    position: absolute;
+    top: 16rem;
+    right: 2rem;
+    width: 50%;
+
+    &--center {
+      top: 18rem;
+    }
+  }
+
+  &__heading-text {
+      padding: .4rem 1rem;
+      box-decoration-break: clone;
+      line-height: 1.6;
+
+      &--e-website {
+        background-image: linear-gradient(to right bottom,
+        rgba(#a7c9a0, .85),
+        rgba(#47807a, .85));
+      }
+
+      &--todolist {
+        background-image: linear-gradient(to right bottom,
+        rgba(#69b5fc, .85),
+        rgba(#8174fc, .85));
+    }
+  }
+
+
+
+  &__details {
+    padding: 3rem;
+  }
+
+  &__list {
+    list-style: none;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  &__list-item {
+    text-align: center;
+    font-size: 1.7rem;
+    padding: 1.5rem;
+
+    &:first-child {
+      font-size: 2rem;
+      font-weight: bolder;
+    }
+    &:not(:first-child) {
+      width: 80%;
+      margin: 0 auto;
+    }
+    &:not(:last-child) {
+      border-bottom: 1px solid rgb(167, 167, 167);
+    }
+  }
+
+  &__linkBox {
+    display: none;
+    @include respond(md) {
+      display: block;
+      padding: 5rem 0;
+      text-align: center;
+      clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+
+      &--e-website {
+        background-image: linear-gradient(to right bottom, #62a152, #4e927c);
+      }
+
+      &--todolist {
+        background-image: linear-gradient(to right bottom, #91c0ce, #5d9cd6);
+      }
+    };
+  }
+}

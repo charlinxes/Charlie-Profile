@@ -1,0 +1,189 @@
+.navigation {
+
+	&__nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: rgba(black, .70);
+	width: 100vw;
+	z-index:2;
+	}
+
+	&__list {
+		width: 70%;
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		@include respond(lg) {
+			width: 80%;
+		};
+		@include respond(md) {
+			width: 95%;
+		};
+	}
+
+	&__item {
+		position:relative;
+		@include respond(md) {
+			display: none;
+		};
+
+		&::before {
+			content: "";
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			height: 1px;
+			width:100%;
+			background-color: rgb(247, 240, 230);
+			transform: scaleX(0);
+			transition:all .2s;
+		}
+
+		&:hover::before {
+			transform: scaleX(1);
+	  }
+		&:hover {
+			background-color: rgba(black, .25);
+		}
+	}
+
+	&__link {
+
+		&:link,
+		&:visited {
+			display: block;
+			padding: 2.5rem 2rem;
+			text-decoration: none;
+			color: rgb(247, 240, 230);
+			font-size: 2rem;
+			transition: all .5s;
+		}
+		&:hover {
+			transform: translateY(-.15rem);
+			background-color: rgba(black, .25);
+		}
+		&:active {
+			transform: translateY(.08rem);
+		}
+	}
+
+	&__content {
+		&-list {
+			display: flex;
+			flex-direction: column;
+			position: absolute;
+			left:0;
+			width: 100%;
+		}
+		&-item {
+			@extend .navigation__item;
+			background-color: rgba(black, .70);
+			&:hover {
+				// 這裡要再加一次，是因為上面的extend中，hover設置成black .25，所以要把它蓋掉
+				// 因為這裡沒有topnav的背景，只能把item作為背景色
+				background-color: rgba(black, .70);
+			}
+		}
+		&-link {
+			@extend .navigation__link;
+		}
+	}
+
+	&__checkbox {
+		display: none;
+	}
+
+	&__checkbox:checked + &__button &__icon::before {
+		transform: rotate(135deg);
+}
+
+&__checkbox:checked + &__button &__icon::after {
+		transform: rotate(-135deg);
+}
+
+	&__button {
+		display: none;
+		height: 7rem;
+		width: 7rem;
+		cursor: pointer;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		@include respond(md) {
+			display: flex;
+		};
+	}
+
+	&__icon {
+		position: relative;
+		transform:translateY(1.5px);
+
+		&,
+		&::before,
+		&::after {
+				width: 3.5rem;
+				height: 3px;
+				background-color: lightgray;
+				display: inline-block;
+		}
+
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+		}
+
+		&::before { top: -.8rem; }
+		&::after { top: .8rem; }
+  }
+
+  &__dropblock {
+		display: none;
+
+		@include respond(md) {
+			display: block;
+		};
+	}
+	&__droplist {
+		position:absolute;
+		top: 7rem;
+		right: 0;
+		width: 15rem;
+		background-color: rgba(black, .70);
+
+		&-item {
+			position:relative;
+		}
+		&-link,&-sublink {
+			&:link,
+			&:visited {
+				display: block;
+				padding: 2.5rem 2rem;
+				text-decoration: none;
+				color: rgb(247, 240, 230);
+				font-size: 2rem;
+			}
+		}
+		&-sublink {
+			&:link,
+			&:visited {
+				padding: 1.5rem 3.5rem;
+				font-size: 1.7rem;
+			}
+		}
+	}
+}
+
+.nuxt-link-exact-active {
+	background-color: rgba(black, .25);
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .3s;
+}
+
+.fade-enter, .fade-leave-to  {
+  opacity: 0;
+}
