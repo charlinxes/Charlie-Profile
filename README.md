@@ -1,69 +1,29 @@
-# nuxt-text
+# Charlie's Profile
+一個基於 Nuxt 構建的個人簡介介紹
 
-## Build Setup
+<a name="table-of-contents"></a>
+## 目錄
+  1. [內容](#content)
+  1. [使用工具](#resources)
 
-```bash
-# install dependencies
-$ yarn install
+<a name="content"></a>
+## 內容
 
-# serve with hot reload at localhost:3000
-$ yarn dev
+  - [1.1](#1.1) <a name='1.1'></a> **介紹內容**：<br>
+  簡略地羅列了學歷和社會經歷，並展示了目前所撰寫的專案的相關資訊
 
-# build for production and launch server
-$ yarn build
-$ yarn start
+  - [1.2](#1.2) <a name='1.2'></a> **CSS內容**：<br>
+  未套用CSS框架，僅使用預處理器(Sass)來撰寫樣式。其中刻意使用了許多相對較新或較少使用的CSS屬性來實現預想的排版與效果，如clip-path、perspective、background-bledn-mode和shape-outside等等
 
-# generate static project
-$ yarn generate
-```
+  - [1.3](#1.3) <a name='1.3'></a> **JavaScript內容**：<br>
+  未使用套件，用純JavaScript實現主頁的視差滾動效果
 
-For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
+  **[⬆ 回到頂端](#table-of-contents)**
 
-## Special Directories
+<a name="resources"></a>
+## 使用工具
 
-You can create the following extra directories, some of which have special behaviors. Only `pages` is required; you can delete them if you don't want to use their functionality.
+  - [2.1](#2.1) <a name='2.1'></a> **octokit/app.js**：<br>
+  跟著GitHub Docs的指引，引入 [octokit/app.js](https://github.com/octokit/app.js/) 來串接 GitHub REST API，以抓取自己的 public repositories 列表供後續元件調用內容
 
-### `assets`
-
-The assets directory contains your uncompiled assets such as Stylus or Sass files, images, or fonts.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/assets).
-
-### `components`
-
-The components directory contains your Vue.js components. Components make up the different parts of your page and can be reused and imported into your pages, layouts and even other components.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/components).
-
-### `layouts`
-
-Layouts are a great help when you want to change the look and feel of your Nuxt app, whether you want to include a sidebar or have distinct layouts for mobile and desktop.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/layouts).
-
-
-### `pages`
-
-This directory contains your application views and routes. Nuxt will read all the `*.vue` files inside this directory and setup Vue Router automatically.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/get-started/routing).
-
-### `plugins`
-
-The plugins directory contains JavaScript plugins that you want to run before instantiating the root Vue.js Application. This is the place to add Vue plugins and to inject functions or constants. Every time you need to use `Vue.use()`, you should create a file in `plugins/` and add its path to plugins in `nuxt.config.js`.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/plugins).
-
-### `static`
-
-This directory contains your static files. Each file inside this directory is mapped to `/`.
-
-Example: `/static/robots.txt` is mapped as `/robots.txt`.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/static).
-
-### `store`
-
-This directory contains your Vuex store files. Creating a file in this directory automatically activates Vuex.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
+  **[⬆ 回到頂端](#table-of-contents)**

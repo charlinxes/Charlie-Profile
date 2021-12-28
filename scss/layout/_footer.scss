@@ -1,8 +1,8 @@
 .footer {
-  background-color: #38393d;
-  padding:5rem 10rem;
-  font-size:1.8rem;
-  color:#b8b8b8;
+  font-size: 1.8rem;
+  color: var(--color-gray-light);
+  background-color: var(--color-dark);
+  padding: 5rem 10rem;
   @include respond(md) {
     padding:5rem 6rem;
   };
@@ -24,11 +24,11 @@
   }
 
   &__heading {
-    color:white;
-    font-size:2.3rem;
+    font-size: 2.3rem;
     font-weight: bold;
-    text-transform:uppercase;
-    letter-spacing:2px
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color-white);
   }
   &__about {
     margin-bottom: 6rem;
@@ -41,11 +41,11 @@
     };
   }
   &__navigation {
-    border-top: 3px solid rgb(207, 207, 207);
-    padding-top: 2.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-top: 3px solid var(--color-gray-lighter);
+    padding-top: 2.5rem;
     @include respond(sm) {
       flex-direction: column;
     };
@@ -61,17 +61,17 @@
     justify-content: space-between;
   }
   &__item {
-    padding:0 1rem;
+    padding: 0 1rem;
     @include respond(sm) {
-      padding:0 .6rem;
+      padding: 0 .6rem;
     };
   }
   &__link {
 
 		&:link,
 		&:visited {
-			display:flex;
-      background-color: rgb(87, 86, 86);
+			display: flex;
+      background-color: var(--color-gray-dark);
       width: 4.5rem;
       height: 4.5rem;
       border-radius: 100%;
@@ -80,7 +80,7 @@
 		}
 
     &:hover .footer__icon {
-      fill:white;
+      fill: var(--color-white);
     }
 
     &--facebook:hover,
@@ -102,6 +102,6 @@
   &__icon {
     width: 2.5rem;
     height: 2.5rem;
-    fill: #999999;
+    fill: var(--color-gray-light);
   }
 }

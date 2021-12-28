@@ -13,7 +13,7 @@ export const mutations = {
 export const actions = {
   async nuxtServerInit ({ commit }, { error }) {
     try {
-      const octokit = new Octokit({ auth: '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' });
+      const octokit = new Octokit({ auth: process.ene.authKey });
       const response = await octokit.request('GET /users/{username}/repos', {
         username: 'chartlines',
         sort: 'created', // 依生成日期排序

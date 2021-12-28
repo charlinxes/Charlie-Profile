@@ -1,6 +1,6 @@
 .heading {
   &__primary {
-    color: rgb(247, 240, 230);
+    color: var(--color-primary-light);
     backface-visibility: hidden;
 
     & > span {

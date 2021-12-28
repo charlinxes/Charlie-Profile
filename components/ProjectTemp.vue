@@ -20,10 +20,6 @@
 
 export default {
   name: 'ProjectTemp',
-  data () {
-    return {
-    };
-  },
   props: {
     projectName: {
       type: String,

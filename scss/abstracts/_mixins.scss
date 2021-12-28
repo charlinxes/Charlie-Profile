@@ -24,3 +24,18 @@
     @media (max-width: 28rem) { @content }
   };
 }
+
+@mixin respond-bgImg($size) {
+  @if $size == 'medium' {
+    // 576px ~ 768px
+    @media only screen and (min-resolution: 192dpi) and (min-width: 18em),
+	       only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 18em),
+	       only screen and (min-width: 36em) { @content }
+  };
+  @if $size == 'large' {
+    // 768px ~
+    @media only screen and (min-resolution: 192dpi) and (min-width: 24em),
+         only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 24em),
+         only screen and (min-width: 48em) { @content }
+  };
+}

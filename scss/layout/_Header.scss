@@ -2,13 +2,27 @@
   height: 80vh;
   background: {
     image: linear-gradient(to right bottom,
-      rgba(#838254, 0.8),
-      rgba(#474726, 0.8)),
-      url('~assets/images/code_large.jpg');
+      var(--color-secondary-transparent),
+      var(--color-secondary-dark-transparent)),
+      url('~assets/images/code_small.jpg');
     position: center;
     size: cover;
     attachment: fixed;
   }
+  @include respond-bgImg(medium) {
+    background-image: linear-gradient(
+      to right bottom,
+      var(--color-secondary-transparent),
+      var(--color-secondary-dark-transparent)),
+      url('~assets/images/code_medium.jpg');
+	}
+  @include respond-bgImg(large) {
+    background-image: linear-gradient(
+      to right bottom,
+      var(--color-secondary-transparent),
+      var(--color-secondary-dark-transparent)),
+      url('~assets/images/code_large.jpg');
+	}
   clip-path: polygon(0 0, 100% 0, 100% 55vh, 0 80vh);
   position: relative;
   z-index: 1;

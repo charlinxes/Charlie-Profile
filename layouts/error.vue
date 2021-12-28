@@ -8,8 +8,8 @@
       <div class="error-page__circle error-page__circle--green"/>
     </div>
     <div class="error-page__message">
-      <h2 style="margin-bottom:6rem">
-        <p style="margin-bottom:1rem">
+      <h2 class="u-mb-5">
+        <p class="u-mb-1">
           {{error.statusCode}}
         </p>
         {{error.message}}

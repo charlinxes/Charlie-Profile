@@ -1,12 +1,12 @@
 .navigation {
 
 	&__nav {
-	position: fixed;
-	top: 0;
-	left: 0;
-	background-color: rgba(black, .70);
-	width: 100vw;
-	z-index:2;
+		width: 100vw;
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 2;
+		background-color: var(--color-black-transparent-high);
 	}
 
 	&__list {
@@ -30,12 +30,12 @@
 
 		&::before {
 			content: "";
+			width: 100%;
 			position: absolute;
 			bottom: 0;
 			left: 0;
 			height: 1px;
-			width:100%;
-			background-color: rgb(247, 240, 230);
+			background-color: var(--color-primary-light);
 			transform: scaleX(0);
 			transition:all .2s;
 		}
@@ -44,7 +44,7 @@
 			transform: scaleX(1);
 	  }
 		&:hover {
-			background-color: rgba(black, .25);
+			background-color: var(--color-black-transparent-low);
 		}
 	}
 
@@ -54,14 +54,14 @@
 		&:visited {
 			display: block;
 			padding: 2.5rem 2rem;
-			text-decoration: none;
-			color: rgb(247, 240, 230);
 			font-size: 2rem;
+			text-decoration: none;
+			color: var(--color-primary-light);
 			transition: all .5s;
 		}
 		&:hover {
 			transform: translateY(-.15rem);
-			background-color: rgba(black, .25);
+			background-color: var(--color-black-transparent-low);
 		}
 		&:active {
 			transform: translateY(.08rem);
@@ -70,19 +70,19 @@
 
 	&__content {
 		&-list {
+			width: 100%;
 			display: flex;
 			flex-direction: column;
 			position: absolute;
-			left:0;
-			width: 100%;
+			left: 0;
 		}
 		&-item {
 			@extend .navigation__item;
-			background-color: rgba(black, .70);
+			background-color: var(--color-black-transparent-high);
 			&:hover {
 				// 這裡要再加一次，是因為上面的extend中，hover設置成black .25，所以要把它蓋掉
 				// 因為這裡沒有topnav的背景，只能把item作為背景色
-				background-color: rgba(black, .70);
+				background-color: var(--color-black-transparent-high);
 			}
 		}
 		&-link {
@@ -125,7 +125,7 @@
 		&::after {
 				width: 3.5rem;
 				height: 3px;
-				background-color: lightgray;
+				background-color: var(--color-gray-lighter);
 				display: inline-block;
 		}
 
@@ -147,23 +147,23 @@
 		};
 	}
 	&__droplist {
-		position:absolute;
+		position: absolute;
 		top: 7rem;
 		right: 0;
 		width: 15rem;
-		background-color: rgba(black, .70);
+		background-color: var(--color-blackbackground-transparent-high);
 
 		&-item {
-			position:relative;
+			position: relative;
 		}
 		&-link,&-sublink {
 			&:link,
 			&:visited {
 				display: block;
 				padding: 2.5rem 2rem;
-				text-decoration: none;
-				color: rgb(247, 240, 230);
 				font-size: 2rem;
+				text-decoration: none;
+				color: var(--color-primary-light);
 			}
 		}
 		&-sublink {
@@ -177,7 +177,7 @@
 }
 
 .nuxt-link-exact-active {
-	background-color: rgba(black, .25);
+	background-color: var(--color-black-transparent-low);
 }
 
 .fade-enter-active, .fade-leave-active {

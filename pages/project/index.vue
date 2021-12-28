@@ -1,6 +1,6 @@
 <template>
   <section class="project">
-    <div class="project__container">
+    <div class="project__container u-maxwidth-center">
       <!-- 利用根元素繼承class的原理來暫避:style使用backgr-image錯誤 -->
       <ProjectTemp project-name="e-website-user-interface" class="project__img--esite">
         一個基於 Vue 2 和 BootStrap 構建的響應式電商網站，包含產品展示、購物車和結帳頁面。
