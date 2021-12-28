@@ -1,8 +1,22 @@
 .story {
   margin-top: -25vh;
   padding: 25vh 0;
-  background-image: linear-gradient(to right bottom, rgb(245, 240, 230), rgb(245, 240, 230)),
-    url('~assets/images/story.jpg');
+  background-image: linear-gradient(to right bottom,
+    var(--color-primary-light),
+    var(--color-primary-light)),
+    url('~assets/images/story_small.jpg');
+  @include respond-bgImg(medium) {
+    background-image: linear-gradient(to right bottom,
+      var(--color-primary-light),
+      var(--color-primary-light)),
+      url('~assets/images/story_medium.jpg');
+  }
+  @include respond-bgImg(large) {
+    background-image: linear-gradient(to right bottom,
+      var(--color-primary-light),
+      var(--color-primary-light)),
+      url('~assets/images/story_large.jpg');
+  }
   background-blend-mode: screen;
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 25vh), 0 100%);
   @include respond(md) {
@@ -46,6 +60,7 @@
     align-self:start;
     margin-top: 7rem;
   }
+
   &__text {
     grid-column: 3 / 4;
   }
@@ -55,6 +70,7 @@
     grid-template-columns: 9rem max-content 1fr;
     font-size: 2rem;
     line-height: 1.6;
+
     &:not(:last-of-type){
       margin-bottom:1.5rem;
     }

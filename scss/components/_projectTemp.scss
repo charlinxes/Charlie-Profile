@@ -1,10 +1,8 @@
 .project {
-  background-color: rgb(223, 214, 199);
+  background-color: var(--color-primary);
   padding-top: 7rem;
 
   &__container {
-    max-width: 200rem;
-    margin: 0 auto;
     padding: {
       top: 6rem;
       bottom: 12rem;
@@ -16,12 +14,12 @@
 
   &__box {
     width: 73%;
-    height: 70rem;          // 1400~1800
+    height: 70rem;
     margin: 0 auto;
     background-size: cover;
     background-position: center;
     border-radius: 3px;
-    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
+    box-shadow: var(--shadow-dark-wider);
     position:relative;
     @include respond(md) {
       width: 78%;
@@ -39,11 +37,25 @@
   }
 
   &__img {
+
     &--esite {
-      background-image: url('~assets/images/projectt.jpg');
+      background-image: url('~assets/images/e-website_small.jpg');
+      @include respond-bgImg(medium) {
+        background-image: url('~assets/images/e-website_medium.jpg');
+      }
+      @include respond-bgImg(large) {
+        background-image: url('~assets/images/e-website_large.jpg');
+      }
     }
+
     &--todolist {
-      background-image: url('~assets/images/to-do-list.jpg');
+      background-image: url('~assets/images/todolist_small.jpg');
+      @include respond-bgImg(medium) {
+        background-image: url('~assets/images/todolist_medium.jpg');
+      }
+      @include respond-bgImg(large) {
+        background-image: url('~assets/images/todolist_large.jpg');
+      }
     }
   }
 
@@ -51,7 +63,8 @@
     width: 100%;
     height: 100%;
     clip-path: polygon(-.1% -.1%, 60% -.1%, 50% 100.1%, -.5% 100.1%);
-    background-color: rgba(rgb(255, 255, 255), .9);
+    background-color: var(--color-white);
+    opacity: .9;
     padding: 2rem 3.5rem;
     list-style-type: disc;
     list-style-position:inside;
@@ -77,7 +90,7 @@
     // shape-outside的左邊設置較為超過的數值，來模擬 padding 效果
     shape-outside: polygon(58% -.1%, 100.1% -.1%,100.1% 100.1%, 48% 100.1%);
     background-color: transparent;
-    float:right;
+    float: right;
     @include respond(xl) {
       clip-path: polygon(65% -.1%, 100.1% -.1%,100.1% 100.1%, 55% 100.1%);
       shape-outside: polygon(63% -.1%, 100.1% -.1%,100.1% 100.1%, 53% 100.1%);
@@ -95,14 +108,15 @@
       shape-outside: polygon(88% -.1%, 100.1% -.1%,100.1% 100.1%, 78% 100.1%);
     };
   }
+
   &__heading {
     font-size: 3.5rem;
     font-weight: 700;
     letter-spacing: .1rem;
-    text-align:center;
-    background-image: linear-gradient(to right, rgb(170, 170, 99), rgb(0, 0, 0));
-    background-clip: text;
+    text-align: center;
     color: transparent;
+    background-image: linear-gradient(to right, var(--color-secondary-light), var(--color-black));
+    background-clip: text;
   }
 
   &__item {
@@ -111,8 +125,8 @@
     word-break: break-all;
 
     &:first-child {
-      margin-top: 2rem;
       list-style-type: none;
+      margin-top: 2rem;
       @include respond(xs) {
         margin-top: 1rem;
       };

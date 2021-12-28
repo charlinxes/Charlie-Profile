@@ -1,14 +1,14 @@
 .badge {
   display: inline-block;
-  padding: .35rem .65rem;
-  font-weight: 700;
   font-size: .7rem;
-  border-radius: 50rem;
-  color: #fff;
+  font-weight: 700;
   text-align: center;
   white-space: nowrap;
+  padding: .35rem .65rem;
+  color: var(--color-white);
+  background-color: var(--color-secondary-dark);
+  border-radius: 50rem;
   vertical-align: middle;
-  background-color: rgb(94, 97, 59);
 
   &:not(:last-child) {
     margin-right: .5rem;
