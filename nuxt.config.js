@@ -1,4 +1,13 @@
+const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES'
+  ? {
+      router: {
+        ase: '/nuxtweb001/',
+      },
+    }
+  : {};
+
 export default {
+  ...routerBase,
   head: {
     title: "Charlie's Profile",
     htmlAttrs: {
@@ -36,6 +45,6 @@ export default {
   },
 
   env: {
-    authKey: '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',
+    authKey: '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',
   },
 };
