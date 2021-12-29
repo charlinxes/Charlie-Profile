@@ -45,6 +45,6 @@ export default {
   },
 
   env: {
-    authKey: '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',
+    authKey: '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',
   },
 };
