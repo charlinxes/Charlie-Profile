@@ -1,7 +1,7 @@
 const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES'
   ? {
       router: {
-        ase: '/nuxtweb001/',
+        base: '/Charlie-Profile/',
       },
     }
   : {};

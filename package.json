@@ -9,7 +9,7 @@
     "generate": "nuxt generate",
     "build:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt build",
     "generate:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt generate",
-    "deploy": "push-dir --dir=dist yarn deploy=gh-pages --cleanup"
+    "deploy": "push-dir --dir=dist yarn --branch=gh-pages --cleanup"
   },
   "dependencies": {
     "@octokit/core": "^3.5.1",
